@@ -1,0 +1,46 @@
+.main {
+	position: absolute;
+	border-width: 1px;
+	border-style: solid;
+
+	top: 30%;
+	left: 35%;
+
+	width: 30%;
+	height: 40%;
+
+	text-align: center;
+	font-family: Arial;
+	font-size: 11pt;
+}
+
+div > p {
+	margin-top: 4%;
+	margin-bottom: 2%;
+}
+
+.table {
+	text-align: left;
+
+	position: relative;
+	margin-left: 9%;
+	margin-top: 6%;
+}
+
+#idx_1 {
+	padding-right: 10px;
+}
+
+#pic_res {
+	height: 17px;
+	width: 17px;
+}
+
+#error_res {
+	color: red;
+	font-size: 8pt;
+}
+
+button {
+	margin-top: 10%;
+}

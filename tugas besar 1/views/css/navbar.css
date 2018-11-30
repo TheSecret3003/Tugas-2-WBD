@@ -1,0 +1,105 @@
+body {margin:0;}
+.navbar{
+    width: 100%;
+}
+
+.white {
+    color: #FFFFFF;
+}
+
+.navbar-atas{
+    background-color: #3998f4;
+    width: 750px;
+    padding: 0 calc((100% - 750px)/2);
+    height: 57px;
+}
+
+.navbar-atas > h1{
+    color: #e5f106;
+    font-size: 40px;
+    margin: 0;
+    width: auto;
+}
+
+.orange-box {
+    background-color: #f26600;
+    width: 65px;
+    height: 57px;
+    margin-left: 3%;
+}
+
+.orange-box:hover {
+    background-color: #c35301;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+}
+
+.height100 {
+    height: 100%;
+}
+.icon {
+    height:36px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.height100 > p{
+    color: white;
+    font-size: 15px;
+    margin: 0;
+    padding-top: 3vh;
+    text-decoration: underline;
+    font-family: 'Nunito', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    margin-top: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0;
+}
+
+.navbar-bawah {
+    height: 57px;
+    width: 750px;
+    padding: 0 calc((100% - 750px)/2);
+    background-color: #3081d0;
+}
+
+li {
+    float: left;
+    width: 33.33%;
+    height: 100%;
+    text-transform: uppercase;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 15px 0;
+    height: 100%;
+}
+
+li a:hover:not(.active) {
+    background-color: #ef9a10;
+}
+
+.active {
+    background-color: #f26200;
+}
+
+.special-char {
+    font-size: 25px
+}
+
+.right-line {
+    border-right: 2px solid black;
+}

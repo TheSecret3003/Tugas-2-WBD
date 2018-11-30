@@ -4,7 +4,7 @@ Melakukan *upgrade* Website toko buku online pada Tugas 1 dengan mengaplikasikan
 
 ### Tujuan Pembuatan Tugas
 
-Diharapkan dengan tugas ini anda dapat mengerti:
+Diharapkan dengan tugas ini mahasiswa dapat mengerti:
 * Produce dan Consume REST API
 * Produce dan Consume Web Services dengan protokol SOAP
 * Membuat web application yang akan memanggil web service secara REST dan SOAP.
@@ -12,32 +12,18 @@ Diharapkan dengan tugas ini anda dapat mengerti:
 
 ## Anggota Tim
 
-Setiap kelompok beranggotakan **3 orang dari kelas yang sama**. Jika jumlah mahasiswa dalam satu kelas modulo 3 menghasilkan 1, maka hanya 1 kelompok terdiri dari 4 mahasiswa. Jika jumlah mahasiswa modulo 3 menghasilkan 2, maka ada dua kelompok yang beranggotakan 4 orang. Seluruh anggota kelompok **harus berbeda dengan tugas 1**.
-
-## Petunjuk Pengerjaan
-
-1. Buatlah organisasi pada gitlab dengan format "IF3110-2018-KXX-nama kelompok", dengan XX adalah nomor kelas.
-2. Tambahkan anggota tim pada organisasi anda.
-3. Fork pada repository ini dengan organisasi yang telah dibuat.
-4. Ubah hak akses repository hasil Fork anda menjadi **private**.
-5. [DELIVERABLE] Buat tugas sesuai spesifikasi dan silakan commit pada repository anda (hasil fork). Lakukan berberapa commit dengan pesan yang bermakna, contoh: `add register form`, `fix logout bug`, jangan seperti `final`, `benerin dikit`. Disarankan untuk tidak melakukan commit dengan perubahan yang besar karena akan mempengaruhi penilaian (contoh: hanya melakukan satu commit kemudian dikumpulkan). Sebaiknya commit dilakukan setiap ada penambahan fitur. **Commit dari setiap anggota tim akan mempengaruhi penilaian individu.** Jadi, setiap anggota tim harus melakukan sejumlah commit yang berpengaruh terhadap proses pembuatan aplikasi.
-6. Hapus bagian yang tidak perlu dari *readme* ini.
-7. [DELIVERABLE] Berikan penjelasan mengenai hal di bawah ini pada bagian **Penjelasan** dari *readme* repository git Anda:
-    - Basis data dari sistem yang Anda buat, yaitu basis data aplkasi pro-book, webservice bank, dan webservice buku.
-    - Konsep *shared session* dengan menggunakan REST.
-    - Mekanisme pembangkitan token dan expiry time pada aplikasi Anda.
-    - Kelebihan dan kelemahan dari arsitektur aplikasi tugas ini, dibandingkan dengan aplikasi monolitik (login, CRUD DB, dll jadi dalam satu aplikasi)
-8. Pada *readme* terdapat penjelasan mengenai pembagian tugas masing-masing anggota (lihat formatnya pada bagian **pembagian tugas**).
-9. Merge request dari repository anda ke repository ini dengan format **Nama kelompok** - **NIM terkecil** - **Nama Lengkap dengan NIM terkecil** sebelum **Jumat, 30 November 2018 pukul 23.59**.
+13516061 - I Putu Eka Surya Aditya
+13516094 - Ahmad Faishol Huda
+13516109 - Kevin Fernaldy
 
 ### Deskripsi Tugas
 ![](temp/architecture.png)
 
-Pada tugas 2, Anda diminta untuk mengembangkan aplikasi toko buku online sederhana yang sudah Anda buat pada tugas 1. Arsitektur aplikasi diubah agar memanfaatkan 2 buah webservice, yaitu webservice bank dan webservice buku. Baik aplikasi maupun kedua webservice, masing-masing memiliki database sendiri. Jangan menggabungkan ketiganya dalam satu database. Anda juga perlu mengubah beberapa hal pada aplikasi pro-book yang sudah Anda buat.
+Pada tugas 2, Mahasiswa diminta untuk mengembangkan aplikasi toko buku online sederhana yang sudah dibuat pada tugas 1. Arsitektur aplikasi diubah agar memanfaatkan 2 buah webservice, yaitu webservice bank dan webservice buku. Baik aplikasi maupun kedua webservice, masing-masing memiliki database sendiri. Jangan menggabungkan ketiganya dalam satu database. Mahasiswa juga perlu mengubah beberapa hal pada aplikasi pro-book yang sudah dibuat.
 
 #### Webservice bank
 
-Anda diminta membuat sebuah webservice bank sederhana yang dibangun di atas **node.js**. Webservice bank memiliki database sendiri yang menyimpan informasi nasabah dan informasi transaksi. Informasi nasabah berisi nama, nomor kartu, dan saldo. Informasi transaksi berisi nomor kartu pengirim, nomor kartu penerima, jumlah, dan waktu transaksi. Informasi lain yang menurut Anda dibutuhkan silahkan ditambahkan sendiri. Database webservice bank harus terpisah dari database aplikasi pro-book.
+Mahasiswa diminta membuat sebuah webservice bank sederhana yang dibangun di atas **node.js**. Webservice bank memiliki database sendiri yang menyimpan informasi nasabah dan informasi transaksi. Informasi nasabah berisi nama, nomor kartu, dan saldo. Informasi transaksi berisi nomor kartu pengirim, nomor kartu penerima, jumlah, dan waktu transaksi. Database webservice bank harus terpisah dari database aplikasi pro-book.
 
 Webservice bank menyediakan service untuk validasi nomor kartu dan transfer. Webservice bank diimplementasikan menggunakan protokol **REST**.
 - Service validasi nomor kartu dilakukan dengan memeriksa apakah nomor kartu tersebut ada pada database bank. Jika iya, berarti kartu tersebut valid.
@@ -48,7 +34,7 @@ Webservice bank menyediakan service untuk validasi nomor kartu dan transfer. Web
 
 Webservice ini menyediakan daftar buku beserta harganya yang akan digunakan oleh aplikasi pro-book. Webservice buku dibangun di atas **java servlet**. Service yang disediakan webservice ini antara lain adalah pencarian buku, mengambil detail buku, melakukan pembelian, serta memberikan rekomendasi buku sederhana. Webservice ini diimplementasikan menggunakan **JAX-WS dengan protokol SOAP**.
 
-Webservice ini memanfaatkan **Google Books API melalui HttpURLConnection. Tidak diperbolehkan menggunakan Google Books Client Library for Java**. Data-data buku yang dimiliki oleh webservice ini akan mengambil dari Google Books API. Silahkan membaca [dokumentasinya](https://developers.google.com/books/docs/overview) untuk detail lebih lengkap. Data pada Google Books API tidak memiliki harga, maka webservice buku perlu memiliki database sendiri berisi data harga buku-buku yang dijual. Database webservice buku harus terpisah dari database bank dan dari database aplikasi pro-book.
+Webservice ini memanfaatkan **Google Books API melalui HttpURLConnection. Tidak diperbolehkan menggunakan Google Books Client Library for Java**. Data-data buku yang dimiliki oleh webservice ini akan mengambil dari Google Books API. Data pada Google Books API tidak memiliki harga, maka webservice buku perlu memiliki database sendiri berisi data harga buku-buku yang dijual. Database webservice buku harus terpisah dari database bank dan dari database aplikasi pro-book.
 
 Detail service yang disediakan webservice ini adalah:
 
@@ -79,11 +65,6 @@ Karena memanfaatkan kedua webservice tersebut, akan ada perubahan pada aplikasi 
 - Pada halaman detail buku, terdapat rekomendasi buku yang didapatkan dari webservice buku. Asumsikan sendiri tampilan yang sesuai.
 
 - Halaman search-book dan search-result pada tugas 1 digabung menjadi satu halaman search yang menggunakan AngularJS. Proses pencarian buku diambil dari webservice buku menggunakan **AJAX**. Hasil pencarian akan ditampilkan pada halaman search menggunakan AngularJS, setelah mendapatkan respon dari webservice. Ubah juga tampilan saat melakukan pencarian untuk memberitahu jika aplikasi sedang melakukan pencarian atau tidak ditemukan hasil.
-
-    Berikut adalah komponen pada AngularJS yang harus digunkan pada aplikasi Anda:
-    - Data binding (ng-model directives)
-    - Controllers (ng-controllers)
-    - ng-repeat, untuk menampilkan list
 
 - Aplikasi Anda menggunakan `access token` untuk menentukan active user. Mekanisme pembentukan dan validasi access token dapat dilihat di bagian *Mekanisme access token*.
 
@@ -135,29 +116,59 @@ Anda tidak dituntut untuk mengerjakan ini. Fokus terlebih dahulu menyelesaikan s
     
     ![](temp/button_example.png)
 
-### Pembagian Tugas
-"Gaji buta dilarang dalam tugas ini. Bila tak mengerti, luangkan waktu belajar lebih banyak. Bila belum juga mengerti, belajarlah bersama-sama kelompokmu. Bila Anda sekelompok bingung, bertanyalah (bukan menyontek) ke teman seangkatanmu. Bila seangkatan bingung, bertanyalah pada asisten manapun."
+## Penjelasan
+Berikut adalah penjelasan mengenai hal-hal di bawah ini :
+    - Basis data dari sistem yang Anda buat, yaitu basis data aplkasi pro-book, webservice bank, dan webservice buku.
+    - Konsep *shared session* dengan menggunakan REST.
+    - Mekanisme pembangkitan token dan expiry time pada aplikasi Anda.
+    - Kelebihan dan kelemahan dari arsitektur aplikasi tugas ini, dibandingkan dengan aplikasi monolitik (login, CRUD DB, dll jadi dalam satu aplikasi)
 
-*Harap semua anggota kelompok mengerjakan SOAP dan REST API kedua-duanya*. Tuliskan pembagian tugas seperti berikut ini.
+### Basis Data
+Kami membuat tiga basis data yaitu :
+#### probookdb
+Terdapat 4 tabel pada basis data ini yaitu : tabel buku yang menyimpan atribut ID buku, judul buku, deskripsi buku, penulis, gambar, harga. Tabel review yang menyimpan atribut ID, rating, deskripsi, user_id, book_id, transaction_id. Tabel transaction yang menyimpan ID, date, user_id, book_id, dan jumlah buku. Tabel user yang menyimpan atribut ID, email, password, address, username, name, phone number, image, dan card number. Pada setiap tabel, ID menjadi primary keynya.
+#### bank_service_schema
+Terdapat 2 tabel pada basis data ini yaitu : tabel nasabah yang menyimpan atribut nomor kartu, nama nasabah, saldo nasabah. Tabel transaksi yang menyimpan atribut ID, no_kartu_pengirim,no_kartu_penerima,jumlah, dan waktu. Pada setiap tabel, ID menjadi primary keynya.
+#### book_service_schema
+Terdapat 2 tabel pada basis data ini yaitu : tabel bookcategories yang menyimpan atribut id buku dan . Tabel transaksi yang menyimpan atribut ID, no_kartu_pengirim,no_kartu_penerima,jumlah
+dan waktu. Pada setiap tabel, ID menjadi primary keynya.
+
+### REST
+Konsep *shared session* dengan menggunakan arsitektur REST adalah dimana server tidak menyiimpan state apapun mengenai client session pada sisi server. Setiap request dari client ke server harus mengandung semua informasi yang dibutuhkan untuk memahami request dan tidak bisa mengambil keuntungan dari konteks apapun yang tersimpan di server. Akibatnya session state disimpan semuanya pada sisi client. Client bertanggung jawab untuk menyimpan dan menangani semua yang terkait dengan state dari aplikasi pada sisi client.
+
+### Token dan Expiry Time
+Pertaman token disimpan di basis data. Token memiliki expiry time yang berbeda dengan expiry time cookie yang disimpan di browser. Ketika user mengakses halaman Pro Book manapun, pertama akan dilakukan pengecekan token pada browser dan database server. Apabila token tidak sama atau telah expired, maka user diharuskan untuk login kembali. Apabila user juga mengakses dari IP Address dan web browser yang berbeda, user juga diwajibkan untuk login kembali.
+
+### Kelebihan dan Kelemahan
+Kelebihan : Lebih gampang dalam menangani file terpisah, Rest memberikan support yang lebih baik untuk browser client, secara umum REST berjalan lebih cepat.
+Kelemahan : Susah diimplementasikan, SOAP hanya menerima data dengan format XML, ketika perubahan pada WSDL dilakukan makan perubahan pada sisi client juga harus dilakukan.
 
 REST :
-1. Validasi nomor kartu : 1351xxxx
-2. ...
+1. Validasi nomor kartu : 13516109
+2. Transfer : 13516109
 
 SOAP :
-1. Add Produce : 1351xxxx
-2. Fungsionalitas Y : 1351xxxx
-3. ...
+1. Add Produce : 13516061, 13516094
+2. Basis Data : 13516061
+3. DBController : 13516061
+4. DBConfig : 13516061
+5. Atribut Buku : 13516061, 13516094
+6. Search Service : 13516061, 13516094
+7. Detail Service : 13516061, 13516094
+8. Buy Service : 13516094
+9. Recommended Service : 13516094
 
 Perubahan Web app :
-1. Halaman Search : 
-2. Halaman X :
-3. ...
+1. Halaman Search Book : 13516061, 13516109
+2. Halaman Search Result : 13516061, 13516109
+3. Halaman Detai Book : 13516061
+4. Halaman Register : 13516109
+5. Halaman Profil : 13516109
+6. Halaman Edit Profil : 13516109
 
 Bonus :
-1. Pembangkitan token HTOP/TOTP : 
-2. Validasi token : 
-3. ...
+1. Pembangkitan token HTOP/TOTP : 13516109
+2. Validasi token : 13516109
 
 ## About
 

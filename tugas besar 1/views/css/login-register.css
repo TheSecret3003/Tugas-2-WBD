@@ -1,0 +1,141 @@
+h3 {
+    color: black;
+}
+
+#login-page {
+    margin-top: 25vh;
+}
+
+.form-container {
+    text-align: center;
+    margin: auto;
+    width: 350px;
+    border-left: 6px #00c0ff solid;
+    border-right: 6px #00c0ff solid;
+    border-top: 20px #00c0ff solid;
+    border-bottom: 20px #00c0ff solid;
+    position: relative;
+    z-index: 1;
+    /*margin-top: 25vh;*/
+}
+
+.form-container .bg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url("../../img/polkadot.jpg") center center;
+    background-repeat: repeat;
+    background-size: 350px 350px;
+    opacity: .6;
+    width: 100%;
+    height: 100%;
+}
+
+.input-container {
+    overflow: hidden;
+    margin: 8px;
+    display: inline-block;
+}
+
+.input-element {
+    padding: 8px 0 8px 0;
+    float: right;
+    clear: both;
+}
+.input-validation {
+    padding: 8px 0 8px 0;
+    float: right;
+    clear: both;
+    margin-right: 39px;
+}
+
+.login-container {
+    margin: auto;
+    display: block;
+    border: 1px orange solid;
+    border-radius: 5px;
+    font-size: 20px;
+    color: orange;
+    background: none;
+    margin-top: 6px;
+    cursor: pointer;
+}
+
+.login-container:hover {
+    background-color: orange;
+    color: #FFFFFF;
+    transition: 0.4 ease-in;
+}
+
+.register-container {
+    margin: auto;
+    display: block;
+    border: 1px orange solid;
+    border-radius: 5px;
+    font-size: 20px;
+    color: orange;
+    background: none;
+    margin-top: 6px;
+}
+.form-container > h1{
+    color: black;
+    font-size: 50px;
+}
+.form-container a{
+    color: black;
+}
+
+.orange {
+    color: orange;
+}
+.arial {
+    font-family: 'Nunito', sans-serif;
+}
+
+.nunito {
+    font-family: 'Nunito', sans-serif;
+}
+
+.calibri {
+    font-family: 'Nunito', sans-serif;
+}
+.bebas-neue {
+    font-family: "Bebas Neue Regular";
+    font-size: xx-large;
+    margin-bottom: 10px;
+    margin-top: 25px;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.block {
+    display: block;
+}
+
+.btn {
+    width: 150px;
+    height: 35px;
+    margin: 10px 10px 10px 10px;
+    text-transform: uppercase;
+    border-style: solid;
+    border-color: #f26600;
+    border-radius: 5px;
+    border-width: 1px;
+    color: #f26600;
+    background-color: #FFFFFF;
+    font-weight: bolder;
+    font-size: large;
+    font-family: 'Nunito', sans-serif;
+}
+
+.btn:hover {
+    color: #FFFFFF;
+    background-color: #f26600;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}

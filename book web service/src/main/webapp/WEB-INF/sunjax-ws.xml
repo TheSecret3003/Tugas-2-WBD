@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<endpoints xmlns='http://java.sun.com/xml/ns/jax-ws/ri/runtime' version='2.0'>
+
+    <endpoint
+            name='BookService'
+            implementation='search.SearchTask'
+            url-pattern='/SearchTas'/>
+    <endpoint
+            name="Detail"
+            implementation="detail.DetailTask"
+            url-pattern="/DetailTask"/>
+    <endpoint
+            name="Buy"
+            implementation="buy.BuyTask"
+            url-pattern="/BuyTask"/>
+    <endpoint
+            name="Reccomendation"
+            implementation="reccomendation.ReccomendationTask"
+            url-pattern="/ReccomendationTask"/>
+</endpoints>

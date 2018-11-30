@@ -1,0 +1,5 @@
+searching book with specific name
+SELECT book.name as name, book.ID as ID, book.author as author, book.description as description, AVG(review.rating) as rating, COUNT(review.ID) FROM book LEFT OUTER JOIN review ON book.ID = review.book_id WHERE book.name LIKE "%sit%" GROUP BY book.ID
+
+looking for history
+SELECT book.name as bookName, transaction.nb_of_books as nbBook, transaction.ID as orderNumber, transaction.date as orderDate, review.ID as reviewResult, book.image as image FROM transaction LEFT OUTER JOIN review ON transaction.ID = review.transaction_id JOIN book ON book.ID = transaction.book_id WHERE transaction.user_id = 60 ORDER BY transaction.date

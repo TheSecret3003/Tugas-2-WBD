@@ -1,0 +1,59 @@
+.absolute-container {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, .5)
+}
+
+.box {
+    opacity: 1;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 150px;
+    margin-top: -75px; /* Half the height */
+    margin-left: -200px; /* Half the width */
+    background-color: #FFFFFF;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.cross {
+    height:36px;
+    display: block;
+    margin-right: 10px;
+    margin-top: 10px;
+    opacity: 0.5;
+}
+
+.cross:hover {
+    cursor: pointer;
+}
+
+.centerize {
+    padding-top: 50px;
+    width: 300px;
+}
+.notif {
+    width: 300px;
+    margin: 0;
+    padding: 0 0 0 10px;
+    font-size: 20px;
+}
+.flex {
+    display: flex;
+}
+.check {
+    height:50px;
+    opacity: unset;
+    display: block;
+    margin-right: 10px;
+    padding-left: 40px;
+}
+
+.order-button:hover {
+    cursor: pointer;
+}

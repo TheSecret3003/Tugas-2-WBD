@@ -1,0 +1,680 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #FFF;
+    width: 100%;
+}
+
+/*SEARCH RESULT*/
+.form-container {
+    margin-bottom: 50px;
+}
+
+.heading-container {
+    width: 100%;
+}
+
+.heading-container > h1{
+    text-align: left;
+    color: #f26600;
+    font-size: 60px;
+}
+.heading-container > h2{
+    color: #4c4c4c;
+    font-size: 20px;
+    margin-top: calc(60px - 20px);
+    margin-bottom: 0;
+}
+.underline {
+    text-decoration: underline;
+}
+
+.description {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.left {
+    float: left;
+}
+
+#price_result {
+    margin-bottom: 40px;
+}
+
+.detail-button {
+    width: 100px;
+    height: 35px;
+}
+
+/*SEARCH BOOK*/
+
+h1{
+    text-align: left;
+    color: #f26600;
+    font-size: 60px;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+}
+#button-search{
+    border-radius: 7px;
+    width: 140px;
+}
+.search-book{
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border: 1px solid #898989;
+    color: #898989;
+    border-radius: 5px;
+    padding-left: 10px;
+    height: 30px;
+    width : calc(100% - 12px);
+    font-size: 17px;
+}
+
+.input-book {
+    width: 100%;
+    display: block;
+}
+
+/*REVIEW*/
+.container {
+    z-index: 1;
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
+}
+
+.desc {
+    overflow: auto;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.book-img-frame {
+    width: 120px;
+    height: 120px;
+    border: 1px solid black;
+    object-fit: cover;
+    -o-object-fit: cover;
+    overflow: hidden;
+}
+
+.book-img {
+    width: auto;
+}
+
+.author {
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    color: #4d4d4d;
+}
+
+.review {
+    margin: 0;
+    width: calc(700px - 122px - 10px);
+    color: #4c4c4c;
+}
+
+.right{
+    float: right;
+}
+
+.rating {
+    display: flex;
+    padding-left: calc((700px - (70px * 5))/2);
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    display: block;
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+}
+
+.rating label:before {
+    background: url("../../img/star-solid.png");
+    background-size: contain;
+}
+
+
+.centre {
+    text-align: center;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    font-size: 16px;
+    resize: none;
+}
+
+.back-container {
+    display: block;
+    border: 1px orange solid;
+    border-radius: 5px;
+    font-size: 20px;
+    color: orange;
+    background: none;
+    margin: 6px auto auto;
+}
+
+.submit-container {
+    display: block;
+    border: 1px orange solid;
+    border-radius: 5px;
+    font-size: 20px;
+    color: orange;
+    background: none;
+    margin: 6px auto auto;
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 7px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'Nunito', sans-serif;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.back-button {
+    background-color: white;
+    color: #ef9a10;
+    border: 1px solid #ef9a10;
+    alignment: center;
+}
+
+.back-button:hover {
+    background-color: #ef9a10;
+    color: white;
+    border-color: #FFFFFF;
+}
+
+.submit-button {
+    background-color: #00aeef;
+    color: white;
+    border: 2px solid #00aeef;
+    float: right;
+}
+
+.review-button {
+    background-color: #08a3d6;
+    color: white;
+    border: 2px solid #08a3d6;
+    float: right;
+}
+
+.submit-button:hover {
+    background-color: #17baef;
+    color: white;
+    border-color: #FFFFFF;
+}
+
+.star-image {
+    height: 70px;
+    max-width:80px;
+    width: 70px;
+    margin: 0;
+    padding: 0;
+}
+
+/*HISTORY*/
+.history-title-desc {
+    font-family: 'Nunito', sans-serif;
+    color: #f26600;
+    font-size: x-large;
+    margin-bottom: 4px;
+    margin-top: 0;
+    width: 400px;
+}
+
+/*REVIEW*/
+.title-desc {
+    font-family: 'Nunito', sans-serif;
+    color: #f26600;
+    font-size: x-large;
+    margin-bottom: 4px;
+    margin-top: 0;
+}
+
+.ordered-review {
+    font-family: 'Nunito', sans-serif;
+    color: darkgrey;
+    font-size: medium;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 180px;
+}
+
+.date-order-details {
+    font-family: 'Nunito', sans-serif;
+    color: black;
+    font-size: medium;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.book-item {
+    margin: 30px 0 0;
+    width: 100%;
+    overflow: auto;
+}
+
+.coral {
+    color: #00374c;
+}
+
+/*MY PROFILE*/
+.picture-frame {
+    width: 16px;
+    height: 16px;
+    margin-left: 125px;
+}
+
+.profile-desc {
+    font-family: 'Nunito', sans-serif;
+    font-size: medium;
+    margin-left: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.detail-username-desc {
+    font-family: 'Nunito', sans-serif;
+    margin-left: 120px;
+    margin-bottom: 0;
+}
+
+.detail-mail-desc {
+    font-family: 'Nunito', sans-serif;
+    margin-left: 155px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.detail-address-desc {
+    font-family: 'Nunito', sans-serif;
+    margin-left: 135px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.detail-phone-desc {
+    font-family: 'Nunito', sans-serif;
+    margin-left: 87px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.detail-card-desc {
+    font-family: 'Nunito', sans-serif;
+    margin-left: 97px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.solid-box {
+    background-color: #065473;
+    width: 750px;
+    height: 300px;
+}
+
+.special-container {
+    width: 750px;
+    margin-left: calc((100% - 750px)/2);
+}
+
+.pencil-image {
+    width: 40px;
+    height: 40px;
+    float: right;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.profile-name {
+    font-family: 'Nunito', sans-serif;
+    color: #FFFFFF;
+    font-size: xx-large;
+    alignment: bottom;
+    margin-top: 10px;
+}
+
+.header-profile {
+    font-family: 'Nunito', sans-serif;
+    font-size: xx-large;
+    color: #f26600;
+    margin-bottom: 0;
+    margin-left: 100px;
+}
+
+.img-circle {
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    display: block;
+}
+
+#pp {
+    border: 4px solid yellow;
+    margin-left: calc((100% - 200px)/2);
+    float: bottom;
+}
+
+.space {
+    padding: 8px 0;
+}
+
+/*EDIT PROFILE*/
+.update-pp {
+    font-family: 'Nunito', sans-serif;
+    color: black;
+    font-size: medium;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 180px;
+}
+
+.browse-button {
+    background-color: darkgrey;
+    color: white;
+    border: 2px solid darkgrey;
+    float: right;
+}
+
+.browse-button:hover {
+    background-color: gray;
+    color: white;
+    border-color: #FFFFFF;
+}
+
+input {
+    width: 384px;
+    margin-right: 0;
+    margin-top: 12px;
+}
+
+.profile-picture {
+    margin: 30px 0 20px;
+    width: 100%;
+}
+
+.input-container {
+    overflow: hidden;
+    margin: 8px;
+    display: inline-block;
+}
+
+.input-element {
+    padding: 8px 0 8px 0;
+    float: right;
+    clear: both;
+}
+
+.save-button {
+    background-color: #00aeef;
+    color: white;
+    border: 2px solid #00aeef;
+    float: right;
+}
+
+.save-button:hover {
+    background-color: #17baef;
+    color: white;
+    border-color: #FFFFFF;
+}
+
+.edit-p {
+    font-family: 'Nunito', sans-serif;
+    margin-right: 0;
+    padding-right: auto;
+}
+
+.pp-img-frame {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    object-fit: cover;
+    -o-object-fit: cover;
+    overflow: hidden;
+}
+
+.button-detail {
+    width: 80px;
+    display: inline-block;
+    border-radius: 3px;
+    background-color: #e6e6e6;
+    cursor: pointer;
+    float: right;
+}
+
+.browse-button {
+    display: none;
+}
+
+.pp-container {
+    display: inline-block;
+    margin-left: 0;
+}
+
+.pp-input-element {
+    padding: 8px 0 8px 0;
+    float: left;
+    clear: both;
+}
+
+.name-margin {
+    margin-left: 165px;
+}
+
+.address-margin {
+    margin-left: 150px;
+}
+
+.phone-margin {
+    margin-left: 100px;
+    margin-top: 0;
+}
+
+.card-margin {
+    margin-left: 110px;
+}
+
+#profile-address {
+    width: 385px;
+    padding-left: 10px;
+    font-size: small;
+}
+/*Book-Detail*/
+.review-container {
+    height: 180px;
+    display: block;
+}
+
+.image-middle {
+    margin-top: auto;
+}
+
+.book-detail{
+    margin: auto;
+    overflow: auto;
+}
+.deskripsi-buku{
+    float: left;
+    display: inline-block;
+    width: 70%;
+}
+.deskripsi-buku > h1{
+    font-size: 50px;
+    color: #f26600;
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+.deskripsi-buku > h2{
+    font-size: 20px;
+    color: black;
+    margin-top: 0;
+}
+
+.deskripsi-buku > p{
+    margin-right: 0;
+}
+.book-image{
+    float: right;
+}
+.image-contain{
+    margin-top: 20px;
+    width: 150px;
+    height: 150pX;
+    border: black solid 1px;
+}
+.image-contain > img{
+    width: auto;
+    max-width: 150px;
+    height: auto;
+    max-height: 150px;
+    display: block;
+    margin: auto;
+}
+.rating-book{
+    display: flex;
+}
+.review-star{
+    height:30px;
+    width:30px;
+}
+.book-image > p{
+    padding: 0 calc(25%);
+    margin-top: 10px;
+    font-size: 20px;
+}
+.order-detail{
+    overflow: auto;
+    margin: 0px auto 15px;
+}
+.order-detail > h3{
+    font-size: 40px;
+}
+.select-contain{
+    margin-bottom: 0;
+}
+.order-button{
+    background-color: #00aeef;
+    color: white;
+    border: 2px solid #00aeef;
+    font-size: 25px;
+    float: right;
+    width: 100px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.order-button:hover {
+    background-color: #17baef;
+    color: white;
+    border-color: #FFFFFF;
+}
+.reviews{
+    overflow: auto;
+    margin: 0 auto 15px;
+}
+.reviews > h4{
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+.image-contains{
+    float: left;
+    margin-top: 0;
+    width: 150px;
+    height: 150pX;
+    display: flex;
+    align-items: center;
+    border: black solid 1px;
+}
+.image-contains > img{
+    width: auto;
+    max-width: 150px;
+    height: auto;
+    max-height: 150px;
+    display: block;
+    margin: auto;
+}
+.detail-review{
+    float: left;
+    display: inline-block;
+    width: 60%;
+    margin-left: 15px;
+}
+.detail-review > h5{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 30px;
+}
+.detail-review > p{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.contain-star{
+    float:right;
+    display: inline-block;
+}
+.contain-star > img {
+    width: 70px;
+    height: 70px;
+    display: block;
+}
+.contain-star > p{
+    padding: 0;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.nunito {
+    font-family: 'Nunito', sans-serif;
+}
+
+.nunito-jumlah {
+    font-family: 'Nunito', sans-serif;
+    font-size: x-large;
+}
+
+.nunito-order {
+    font-family: 'Nunito', sans-serif;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #0e0168;
+}
+
+.nunito-reviews {
+    font-family: 'Nunito', sans-serif;
+    color: #0e0168;
+}
+.price{
+    font-size: 20px;
+    font-family: 'Nunito';
+    color: red;
+}

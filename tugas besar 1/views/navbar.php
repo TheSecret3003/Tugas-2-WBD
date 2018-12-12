@@ -31,9 +31,9 @@ $row = $result->fetch_assoc();
 
 
                 if ((strpos($url,'search') !== false) || (strpos($url,'detail') !== false)){
-                    echo '<li><a class="active right-line" href="search_book.php"><span class="special-char">B</span>rowse</a></li>';
+                    echo '<li><a class="active right-line" href="search.php"><span class="special-char">B</span>rowse</a></li>';
                 } else {
-                    echo '<li><a class="right-line" href="search_book.php"><span class="special-char">B</span>rowse</a></li>';
+                    echo '<li><a class="right-line" href="search.php"><span class="special-char">B</span>rowse</a></li>';
                 }
 
                 if ((strpos($url,'review') !== false) || (strpos($url,'history') !== false)){

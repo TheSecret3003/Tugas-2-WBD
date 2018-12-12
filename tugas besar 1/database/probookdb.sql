@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
--- https://www.phpmyadmin.net/
+-- version 4.5.4.1deb2ubuntu2.1
+-- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 30, 2018 at 10:56 AM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.10
+-- Host: localhost
+-- Generation Time: Dec 12, 2018 at 06:11 PM
+-- Server version: 5.7.24-0ubuntu0.16.04.1
+-- PHP Version: 7.2.11-3+ubuntu16.04.1+deb.sury.org+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -32,17 +30,8 @@ CREATE TABLE `book` (
   `ID` int(11) NOT NULL,
   `name` text NOT NULL,
   `description` text NOT NULL,
-  `author` text NOT NULL,
-  `image` varchar(50) NOT NULL,
-  `harga` int(11) NOT NULL
+  `author` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `book`
---
-
-INSERT INTO `book` (`ID`, `name`, `description`, `author`, `image`, `harga`) VALUES
-(101, 'Fundamental of Pysics Theorem', 'Best book to study Physics theorem', 'Some1', '', 230000);
 
 -- --------------------------------------------------------
 
@@ -62,6 +51,20 @@ CREATE TABLE `review` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `token`
+--
+
+CREATE TABLE `token` (
+  `id` varchar(32) NOT NULL,
+  `ip_address` varchar(16) NOT NULL,
+  `user_agent` varchar(255) NOT NULL,
+  `user_data` varchar(50) NOT NULL,
+  `expiry_time` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `transaction`
 --
 
@@ -72,13 +75,6 @@ CREATE TABLE `transaction` (
   `book_id` int(11) NOT NULL,
   `nb_of_books` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `transaction`
---
-
-INSERT INTO `transaction` (`ID`, `date`, `user_id`, `book_id`, `nb_of_books`) VALUES
-(201, '2018-11-30', 103, 101, 1);
 
 -- --------------------------------------------------------
 
@@ -146,26 +142,22 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `book`
 --
 ALTER TABLE `book`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
-
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
-
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=202;
-
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
-
 --
 -- Constraints for dumped tables
 --
@@ -184,7 +176,6 @@ ALTER TABLE `review`
 ALTER TABLE `transaction`
   ADD CONSTRAINT `to_book` FOREIGN KEY (`book_id`) REFERENCES `book` (`ID`) ON DELETE CASCADE,
   ADD CONSTRAINT `to_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

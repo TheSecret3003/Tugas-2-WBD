@@ -1,4 +1,12 @@
 <?php
+function  check_if_for_sale($status){
+    if ($status->saleability == "NOT_FOR_SALE"){
+        return NULL;
+    } else {
+        return $status->listPrice->amount;
+    }
+};
+
 /**
  * Created by PhpStorm.
  * User: secret
@@ -6,30 +14,30 @@
  * Time: 7:38
  */
 if (isset($_COOKIE['access_token'])) {
-    include 'include/dbh.inc.php';
-
-    $bookID = mysqli_real_escape_string($conn, $_POST['book-id']);
-
     //Error Handlers
+    $bookID = $_POST["book-id"];
     // Check if inputs are empty
     if (empty($bookID)) {
         # code...
-        header("Location: search_book.php?searchbook=empty");
+        header("Location: search.php?searchbook=empty");
         exit();
     } else {
-        // Getting reviews from user
-        $sql = "SELECT review.rating, review.description, user.username, user.image FROM review INNER JOIN user ON review.user_id = user.ID WHERE review.book_id = ". $bookID;
-        $result = mysqli_query($conn, $sql);
-        $resultCheck = mysqli_num_rows($result);
-        $review = array();
-        while ($row = $result->fetch_assoc()) {
-            array_push($review, $row);
-        }
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, "http://localhost/tubeswbd3/views/extra/detailBook.php?id=".$bookID);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        
+        $resp = curl_exec($curl);
+        curl_close($curl);
+        $resp = json_decode($resp);
 
-        // Getting book info and rating
-        $sql = "SELECT book.name, book.image, book.author, book.description, AVG(review.rating) as rating,book.harga FROM review INNER JOIN book ON review.book_id = book.ID WHERE book.ID = ". $bookID;
-        $result = mysqli_query($conn, $sql);
-        $book = $result->fetch_assoc();
+        $book = [
+            "name"      => $resp->volumeInfo->title,
+            "author"    => join(", ",$resp->volumeInfo->authors),
+            "description"   => $resp->volumeInfo->description,
+            "image"     => $resp->volumeInfo->imageLinks->thumbnail,
+            "rating"    => round($resp->volumeInfo->averageRating),
+            "price"     => check_if_for_sale($resp->saleInfo)
+        ];
     }
 } else {
     header("Location: login.php?sign-in-first-dude");
@@ -94,23 +102,32 @@ if (isset($_COOKIE['access_token'])) {
     </div>
     <div class="order-detail">
         <h3 class="nunito-order">Order</h3>
-        <div class= "price"><?php echo $book['harga'] ?></div>
-        <div class="select-contain">
-            <span class="nunito-jumlah"> Jumlah :</span>
-            <select class="select-number" id="nb-of-books">
-                <option value="1" class="nunito">1</option>
-                <option value="2" class="nunito">2</option>
-                <option value="3" class="nunito">3</option>
-                <option value="4" class="nunito">4</option>
-                <option value="5" class="nunito">5</option>
-            </select>
-        </div>
-
         <?php
-        echo("<div id=\"book-id\" style=\"display: none\">". $bookID ."</div>");
-        echo("<div id=\"user-id\" style=\"display: none\">". $_COOKIE['ID'] ."</div>");
+            if (!(is_null($book["price"]))){
+                echo "
+                    <div class= 'price'>".$book['price']."</div>
+                    <div class='select-contain'>
+                        <span class='nunito-jumlah'> Jumlah :</span>
+                        <select class='select-number' id='nb-of-books'>
+                            <option value='1' class='nunito'>1</option>
+                            <option value='2' class='nunito'>2</option>
+                            <option value='3' class='nunito'>3</option>
+                            <option value='4' class='nunito'>4</option>
+                            <option value='5' class='nunito'>5</option>
+                        </select>
+                    </div>
+
+                    <div id='book-id' style='display: none'>".$bookID."</div>
+                    <div id='user-id' style='display: none'>".$_COOKIE['ID']."</div>
+
+                    <button class='order-button' name='submit' type='submit' onclick='makeTransaction()'>Order</button>
+                ";
+            } else {
+                echo "
+                    <div class= 'price'>Book is not for sale.</div>
+                ";
+            }
         ?>
-        <button class="order-button" name="submit" type="submit" onclick="makeTransaction()">Order</button>
     </div>
 
     <div class="reviews">

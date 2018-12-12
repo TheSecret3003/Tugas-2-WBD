@@ -25,7 +25,8 @@ public class main {
 		BuyBookByID s4 = new BuyBookByID();
 		
 //		ListBook aListBook= service1.getBookByTitle("magic");
-//		Book aBook = service2.getBookByID("qGCWDgAAQBAJ");
+		String aBook = service2.getBookByID("TepXQMN6lfUC");
+		System.out.println(aBook);
 //		JSONObject bListBook = s3.getRecomendedBook("Action");
 //		System.out.println(bListBook.getListBook().size())
 		

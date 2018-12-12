@@ -39,7 +39,6 @@ main_module.controller("contentController", function($scope,$http) {
 	}
 
 	check_if_saleability = function(sale_info){
-		console.log(sale_info.saleability);
 		if (sale_info.saleability === "NOT_FOR_SALE"){
 			return "NOT FOR SALE";
 		} else {

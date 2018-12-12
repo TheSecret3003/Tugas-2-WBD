@@ -10,13 +10,14 @@ import org.json.JSONObject;
 @WebService
 public class GetBooksByTitle {
 	@WebMethod
-	public JSONObject getBookByTitle(@WebParam(name="title") String title) throws Exception {
+	public String getBookByTitle(@WebParam(name="title") String title) throws Exception {
 		String url_book = title.replace(" ", "+");
 		String url = "https://www.googleapis.com/books/v1/volumes?q=" + url_book;
 		
 		String BooksResponseStr = HttpCon.HttpRequest.getRespondFrom(url);
-		System.out.println(BooksResponseStr);
-		JSONObject jsonObj = new JSONObject(BooksResponseStr);
-		return jsonObj;
+		//System.out.println(BooksResponseStr);
+		//JSONObject jsonObj = new JSONObject(BooksResponseStr);
+
+		return BooksResponseStr;
 	}
 }

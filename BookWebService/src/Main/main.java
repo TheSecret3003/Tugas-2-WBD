@@ -11,7 +11,7 @@ import JsonBook.ListBook;
 import Publisher.Publisher;
 
 
-public class Main {
+public class main {
 	public static void main(String[] args) throws Exception {
 //		Book aBook = BookService.GetBookByID.getBookByID("zyTCAlFPjgYC");
 		Publisher.getBookByIDPublisher();
@@ -26,7 +26,7 @@ public class Main {
 		
 //		ListBook aListBook= service1.getBookByTitle("magic");
 //		Book aBook = service2.getBookByID("qGCWDgAAQBAJ");
-		JSONObject bListBook = s3.getRecomendedBook("Action");
+//		JSONObject bListBook = s3.getRecomendedBook("Action");
 //		System.out.println(bListBook.getListBook().size())
 		
 //		String resp = s4.buyBookByID("NKk4DwAAQBAJ", 1, "1111222233334444", "Self-Help", 30000.00, "30 November 2018");
